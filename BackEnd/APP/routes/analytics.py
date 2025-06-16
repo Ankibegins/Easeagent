@@ -3,7 +3,8 @@ from APP.routes.email import email_db
 from APP.routes.agent import agent_db
 from APP.routes.task import task_db
 
-analytics_router =APIRouter(prefic="/analytics", tags=["Analytics"])
+analytics_router =APIRouter(prefix="/analytics", tags=["Analytics"])
+
 
 
 @analytics_router.get("/emails")
