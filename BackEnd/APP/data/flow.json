@@ -1,0 +1,26 @@
+[
+  {
+    "keyword": "email",
+    "data": {
+      "subject": "Order Inquiry",
+      "sender": "customer@example.com",
+      "reciver": "owner@shop.com",
+      "body": "Hi, I want to order 500 units. Is it available?"
+    }
+  },
+  {
+    "keyword": "email_reply",
+    "data": {
+      "email_text": "Hi, I want to order 500 units. Is it available?"
+    }
+  },
+  {
+  "keyword": "check_inventory",
+  "data": {
+    "product": "pen",
+    "quantity": 500
+  }
+}
+
+  
+]

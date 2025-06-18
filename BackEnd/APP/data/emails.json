@@ -1,0 +1,14 @@
+[
+  {
+    "subject": "Order Inquiry",
+    "sender": "customer@example.com",
+    "reciver": "owner@shop.com",
+    "body": "Hi, I want to order 500 units. Is it available?"
+  },
+  {
+    "subject": "Order Inquiry",
+    "sender": "customer@example.com",
+    "reciver": "owner@shop.com",
+    "body": "Hi, I want to order 500 units. Is it available?"
+  }
+]
