@@ -1,9 +1,10 @@
 from pydantic import BaseModel
 from datetime import datetime
 
-class SchedulerRequest(BaseModel):
+class ScheduleRequest(BaseModel):
     description: str
+    datetime: datetime
 
-class SchedulerResponse(BaseModel):
+class SchedulerEvent(BaseModel):
     description: str
     datetime: datetime
