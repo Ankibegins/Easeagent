@@ -8,12 +8,14 @@ from APP.routes.ai import ai_router
 from APP.routes.analytics import analytics_router 
 from APP.routes.scheduler import scheduler_router
 from APP.routes.ai_dispatch import ai_dispatch_router
-from APP.routes.meeting import meeting_router
+from APP.routes.meetings import meeting_router
+
+
 
 
 app = FastAPI()
 app.include_router(meeting_router)
-
+app.include_router(meeting_router)
 app.include_router(ai_dispatch_router)
 app.include_router(user_router)
 app.include_router(task_router)
