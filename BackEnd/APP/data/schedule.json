@@ -2,5 +2,9 @@
   {
     "description": "Team call",
     "datetime": "2025-06-20T16:00:00"
+  },
+  {
+    "description": "Meeting from AI dispatch",
+    "datetime": "2025-06-20T17:00:00"
   }
 ]

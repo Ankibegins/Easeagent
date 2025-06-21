@@ -3,7 +3,7 @@
 from fastapi import APIRouter, HTTPException
 from APP.schemas.email import Email, ReplyRequest
 from APP.agents.email_agent import send_email, get_all_emails
-from APP.agents.gemini_agent import generate_email_reply
+from APP.utils.gemini_connector import generate_email_reply
 
 email_router = APIRouter(prefix="/emails", tags=["Emails"])
 

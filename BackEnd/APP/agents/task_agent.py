@@ -1,7 +1,8 @@
 import json
 from pathlib import Path
 from APP.agents.email_agent import send_email, get_all_emails
-from APP.agents.gemini_agent import generate_email_reply
+from APP.utils.gemini_connector import  generate_email_reply
+
 from APP.agents.inventory_agent import check_inventory
 
 
@@ -36,7 +37,7 @@ def run_task_flow():
     
         elif keyword == "email_reply":
             print("🤖 Generating email reply...")
-            reply = generate_email_reply(data["email_text"])
+            reply =  generate_email_reply(data["email_text"])
             results.append({"keyword": keyword, "reply": reply})
         elif keyword == "check_inventory":
             print("📦 Checking inventory...")

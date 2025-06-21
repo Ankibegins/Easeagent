@@ -15,6 +15,7 @@ genai.configure(api_key=api_key)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
 def generate_email_reply(email_text: str) -> str:
+
     """
     Generate a reply using Gemini AI for the given email text.
     """

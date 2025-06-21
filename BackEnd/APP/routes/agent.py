@@ -2,18 +2,21 @@ from fastapi import APIRouter, HTTPException
 from pydantic import BaseModel
 from typing import List
 
+from APP.schemas.email_input import EmailInput
+from APP.utils.gemini_connector import generate_email_reply
 agent_router = APIRouter(prefix="/agents", tags=["Agents"])
 
-# In-memory agent database
+# In-memory agent database (temporary, until DB integration)
 agent_db = []
 
-# Pydantic model for an AI Agent
+# Schema for AI Agent
 class Agent(BaseModel):
-    name: str             # e.g., "ReplyBot", "Scheduler", "Summarizer"
-    role: str             # What it does, e.g., "Handles email replies"
-    capabilities: List[str]  # List of things this agent can do
+    name: str                     # e.g., "ReplyBot", "Scheduler", "Summarizer"
+    role: str                     # e.g., "Handles email replies"
+    capabilities: List[str]       # e.g., ["reply to emails", "summarize text"]
 
-# GET all agents
+# ------------------- AGENT CRUD -------------------
+
 @agent_router.get("/")
 def get_agents():
     return {
@@ -21,7 +24,6 @@ def get_agents():
         "agents": agent_db
     }
 
-# GET single agent by index
 @agent_router.get("/{agent_id}")
 def get_agent(agent_id: int):
     if agent_id < 0 or agent_id >= len(agent_db):
@@ -31,7 +33,6 @@ def get_agent(agent_id: int):
         "agent": agent_db[agent_id]
     }
 
-# POST add a new agent
 @agent_router.post("/")
 def add_agent(agent: Agent):
     agent_db.append(agent)
@@ -40,7 +41,6 @@ def add_agent(agent: Agent):
         "agent": agent
     }
 
-# PUT update agent by index
 @agent_router.put("/{agent_id}")
 def update_agent(agent_id: int, updated_agent: Agent):
     if agent_id < 0 or agent_id >= len(agent_db):
@@ -51,7 +51,6 @@ def update_agent(agent_id: int, updated_agent: Agent):
         "agent": updated_agent
     }
 
-# DELETE remove agent
 @agent_router.delete("/{agent_id}")
 def delete_agent(agent_id: int):
     if agent_id < 0 or agent_id >= len(agent_db):
@@ -61,3 +60,13 @@ def delete_agent(agent_id: int):
         "message": "Agent deleted successfully!",
         "deleted_agent": deleted
     }
+
+# ------------------- EMAIL REPLY -------------------
+
+@agent_router.post("/email-reply")
+def get_ai_email_reply(email: EmailInput):
+    try:
+        reply = generate_email_reply(email.message)
+        return {"reply": reply}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Failed to generate reply: {e}")

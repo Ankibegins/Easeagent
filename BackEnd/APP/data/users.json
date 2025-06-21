@@ -1,0 +1,16 @@
+[
+  {
+    "username": "ankit",
+    "password": "1234",
+    "email": "ankit@example.com",
+    "is_verified": false,
+    "verification_code": "4387"
+  },
+  {
+    "username": "aankit",
+    "password": "mysecurepassword",
+    "email": "ankitofficial0425@gmail.com",
+    "is_verified": true,
+    "verification_code": null
+  }
+]

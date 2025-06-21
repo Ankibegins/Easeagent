@@ -10,3 +10,9 @@ class Email(BaseModel):
 
 class ReplyRequest(BaseModel):
     email_text: str
+
+# APP/schemas/email_input.py
+
+
+class EmailInput(BaseModel):
+    message: str
