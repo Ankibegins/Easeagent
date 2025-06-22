@@ -147,10 +147,9 @@ POST /agents/email-reply	Generate reply (Gemini)
 🌐 Frontend integration
 
 👨‍💻 Author
-Ankit Choudhary
+Ankit
 B.Tech CSE @ Chandigarh University
 Passionate about AI, automation, and building real-world GenAI systems.
-GitHub | Email
 
 🏁 License
 This project is for educational and prototype purposes only. Use with proper attribution and API usage limits in mind.
