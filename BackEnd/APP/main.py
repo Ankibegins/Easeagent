@@ -15,7 +15,6 @@ from APP.routes.meetings import meeting_router
 
 app = FastAPI()
 app.include_router(meeting_router)
-app.include_router(meeting_router)
 app.include_router(ai_dispatch_router)
 app.include_router(user_router)
 app.include_router(task_router)
