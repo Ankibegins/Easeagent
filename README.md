@@ -50,9 +50,6 @@ backend/
 ├── .env
 └── README.md
 
-yaml
-Copy
-Edit
 
 ---
 
