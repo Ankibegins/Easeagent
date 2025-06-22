@@ -27,29 +27,33 @@ EaseAgent is an AI assistant system designed to automate tasks for small busines
 
 ## 📁 Project Structure
 
+## 📁 Project Structure
+
+<pre>
 backend/
 ├── APP/
-│ ├── agents/
-│ │ ├── email_agent.py
-│ │ ├── meeting_agent.py
-│ │ └── task_agent.py
-│ ├── routes/
-│ │ ├── email.py
-│ │ ├── meetings.py
-│ │ ├── task.py
-│ │ └── agent.py
-│ ├── schemas/
-│ │ ├── email.py
-│ │ ├── meeting.py
-│ │ └── ...
-│ ├── utils/
-│ │ └── gemini_connector.py
-│ └── main.py
+│   ├── agents/
+│   │   ├── email_agent.py
+│   │   ├── meeting_agent.py
+│   │   └── task_agent.py
+│   ├── routes/
+│   │   ├── email.py
+│   │   ├── meetings.py
+│   │   ├── task.py
+│   │   └── agent.py
+│   ├── schemas/
+│   │   ├── email.py
+│   │   ├── meeting.py
+│   │   ├── reply_request.py
+│   │   └── ...
+│   ├── utils/
+│   │   └── gemini_connector.py
+│   └── main.py
 ├── meetings.json
 ├── business_profiles.json
 ├── .env
 └── README.md
-
+</pre>
 
 ---
 
